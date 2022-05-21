@@ -21,6 +21,7 @@
     <string name="new_game">Создание новой игры</string>
     <string name="change_password_btn">Подтвердить</string>
     <string name="join_game_btn">Присоединиться</string>
+    <string name="enter_game_btn">Войти в игру</string>
     <string name="create_game_btn">Создать новую игру</string>
     <string name="no_characters">У вас ещё нет ни одного персонажа</string>
     <string name="no_games">У вас ещё нет ни одной игры</string>

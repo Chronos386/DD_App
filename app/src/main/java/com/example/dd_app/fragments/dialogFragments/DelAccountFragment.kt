@@ -3,6 +3,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.TextView
 import androidx.fragment.app.DialogFragment
 import com.example.dd_app.dataFrom.DataFromDB
 import com.example.dd_app.dataFrom.DataFromNetwork
@@ -17,6 +18,7 @@ class DelAccountFragment: DialogFragment() {
     @Inject lateinit var dataBase: DataFromDB
     @Inject lateinit var netHelper: DataFromNetwork
     private lateinit var acc: AccountData
+    lateinit var title: TextView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -33,6 +35,7 @@ class DelAccountFragment: DialogFragment() {
             .inject(this)
         dataBase.initDataBase(requireContext())
 
+        title = binding.title
         val cancel = binding.exitBtn
         val confirm = binding.dellBtn
 
