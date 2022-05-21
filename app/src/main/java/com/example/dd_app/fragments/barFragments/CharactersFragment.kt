@@ -11,7 +11,7 @@ import com.example.dd_app.dataSource.AccountData
 import com.example.dd_app.dataSource.CharacterData
 import com.example.dd_app.dataSource.CharactersData
 import com.example.dd_app.databinding.FragmentCharactersBinding
-import com.example.dd_app.fragments.dialogFragments.CharacterInformDialogFragment
+import com.example.dd_app.fragments.dialogFragments.CharacterInformFragment
 import com.example.dd_app.help_components.DaggerAppComponent
 import com.example.dd_app.help_components.GoToCharacter
 import javax.inject.Inject
@@ -62,7 +62,7 @@ class CharactersFragment : Fragment() {
         val arrCharacters = CharactersData.fromJson(netHelper.str)
         val adapter = CharactersAdapter(requireContext(), arrCharacters, object : GoToCharacter {
             override fun onClicked(data: CharacterData){
-                val dialog = CharacterInformDialogFragment.newInstance(data)
+                val dialog = CharacterInformFragment.newInstance(data)
                 dialog.show(parentFragmentManager, "customDialog")
             }
         })

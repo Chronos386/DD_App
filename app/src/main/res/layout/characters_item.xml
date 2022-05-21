@@ -21,8 +21,7 @@
         android:layout_marginBottom="8dp"
         android:adjustViewBounds="true"
         android:background="@drawable/image_background"
-        android:contentDescription="@string/upd_password"
-        android:scaleType="centerCrop" />
+        android:contentDescription="@string/upd_password" />
 
     <TextView
         android:id="@+id/name_character_spis"

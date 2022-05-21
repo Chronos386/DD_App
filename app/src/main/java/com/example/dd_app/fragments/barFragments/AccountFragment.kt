@@ -8,7 +8,7 @@ import com.example.dd_app.dataFrom.DataFromDB
 import com.example.dd_app.dataSource.AccountData
 import com.example.dd_app.databinding.FragmentAccountBinding
 import com.example.dd_app.fragments.contact.navigator
-import com.example.dd_app.fragments.dialogFragments.DelAccountDialogFragment
+import com.example.dd_app.fragments.dialogFragments.DelAccountFragment
 import com.example.dd_app.fragments.dialogFragments.UpdAccountPswFragment
 import com.example.dd_app.help_components.DaggerAppComponent
 import javax.inject.Inject
@@ -39,7 +39,7 @@ class AccountFragment : Fragment() {
         val updPsw = binding.updatePswBtn
 
         dell.setOnClickListener {
-            val dialog = DelAccountDialogFragment.newInstance(acc)
+            val dialog = DelAccountFragment.newInstance(acc)
             dialog.show(parentFragmentManager, "customDialog")
         }
 

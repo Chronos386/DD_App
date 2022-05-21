@@ -12,7 +12,7 @@ import com.example.dd_app.fragments.contact.navigator
 import com.example.dd_app.help_components.DaggerAppComponent
 import javax.inject.Inject
 
-class DelAccountDialogFragment: DialogFragment() {
+class DelAccountFragment: DialogFragment() {
     private lateinit var binding: DialogFragmentDelAccountBinding
     @Inject lateinit var dataBase: DataFromDB
     @Inject lateinit var netHelper: DataFromNetwork
@@ -60,7 +60,7 @@ class DelAccountDialogFragment: DialogFragment() {
 
         @JvmStatic
         fun newInstance(item: AccountData) =
-            DelAccountDialogFragment().apply {
+            DelAccountFragment().apply {
                 arguments = Bundle().apply {
                     putSerializable(ARG_PARAM1, item)
                 }

@@ -12,7 +12,7 @@ import com.example.dd_app.databinding.DialogFragmentJoinGameBinding
 import com.example.dd_app.help_components.DaggerAppComponent
 import javax.inject.Inject
 
-class JoinGameDialogFragment: DialogFragment() {
+class JoinGameFragment: DialogFragment() {
     private lateinit var binding: DialogFragmentJoinGameBinding
     @Inject lateinit var netHelper: DataFromNetwork
     private lateinit var acc: AccountData
@@ -26,8 +26,7 @@ class JoinGameDialogFragment: DialogFragment() {
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState:
     Bundle?): View {
-        binding = DialogFragmentJoinGameBinding.inflate(inflater, container,
-            false)
+        binding = DialogFragmentJoinGameBinding.inflate(inflater, container, false)
         DaggerAppComponent.builder()
             .build()
             .inject(this)
@@ -39,8 +38,8 @@ class JoinGameDialogFragment: DialogFragment() {
 
         regBtn.setOnClickListener {
             this.onDestroyView()
-            println("Я футбольный мячик")
-            //Создаём окно регистрации игры
+            val dialog = CreateNewGameFragment.newInstance(acc)
+            dialog.show(parentFragmentManager, "customDialog")
         }
 
         confBtn.setOnClickListener {
@@ -105,7 +104,7 @@ class JoinGameDialogFragment: DialogFragment() {
 
         @JvmStatic
         fun newInstance(item: AccountData) =
-            JoinGameDialogFragment().apply {
+            JoinGameFragment().apply {
                 arguments = Bundle().apply {
                     putSerializable(ARG_PARAM1, item)
                 }

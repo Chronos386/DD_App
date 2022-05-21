@@ -9,7 +9,7 @@ import com.example.dd_app.adapters.GamesAdapter
 import com.example.dd_app.dataFrom.DataFromNetwork
 import com.example.dd_app.dataSource.*
 import com.example.dd_app.databinding.FragmentGameBinding
-import com.example.dd_app.fragments.dialogFragments.JoinGameDialogFragment
+import com.example.dd_app.fragments.dialogFragments.JoinGameFragment
 import com.example.dd_app.help_components.DaggerAppComponent
 import com.example.dd_app.help_components.GoToGame
 import javax.inject.Inject
@@ -51,7 +51,7 @@ class GameFragment : Fragment() {
         })
         thr.start()
         binding.plusButton.setOnClickListener {
-            val dialog = JoinGameDialogFragment.newInstance(acc)
+            val dialog = JoinGameFragment.newInstance(acc)
             dialog.show(parentFragmentManager, "customDialog")
         }
         return binding.root

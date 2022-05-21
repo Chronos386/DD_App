@@ -11,7 +11,7 @@ import com.example.dd_app.dataSource.CharacterData
 import com.example.dd_app.databinding.DialogFragmentCharacterItemBinding
 import com.squareup.picasso.Picasso
 
-class CharacterInformDialogFragment: DialogFragment() {
+class CharacterInformFragment: DialogFragment() {
     private lateinit var binding: DialogFragmentCharacterItemBinding
     private lateinit var chData: CharacterData
 
@@ -83,7 +83,7 @@ class CharacterInformDialogFragment: DialogFragment() {
 
         @JvmStatic
         fun newInstance(item: CharacterData) =
-            CharacterInformDialogFragment().apply {
+            CharacterInformFragment().apply {
                 arguments = Bundle().apply {
                     putSerializable(ARG_PARAM1, item)
                 }
