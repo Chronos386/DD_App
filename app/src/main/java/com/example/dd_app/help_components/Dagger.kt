@@ -7,10 +7,7 @@ import com.example.dd_app.fragments.MainFragment
 import com.example.dd_app.fragments.barFragments.AccountFragment
 import com.example.dd_app.fragments.barFragments.CharactersFragment
 import com.example.dd_app.fragments.barFragments.GameFragment
-import com.example.dd_app.fragments.dialogFragments.CreateNewGameFragment
-import com.example.dd_app.fragments.dialogFragments.DelAccountFragment
-import com.example.dd_app.fragments.dialogFragments.JoinGameFragment
-import com.example.dd_app.fragments.dialogFragments.UpdAccountPswFragment
+import com.example.dd_app.fragments.dialogFragments.*
 import dagger.Component
 import dagger.Module
 import dagger.Provides
@@ -25,6 +22,8 @@ interface AppComponent {
     fun inject(fragment: AccountFragment)
     fun inject(fragment: DelAccountFragment)
     fun inject(fragment: UpdAccountPswFragment)
+    fun inject(fragment: WhatDoWithGameFragment)
+    fun inject(fragment: SureDelGameFragment)
     fun inject(fragment: CharactersFragment)
     fun inject(fragment: GameFragment)
     fun inject(fragment: JoinGameFragment)

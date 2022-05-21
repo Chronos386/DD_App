@@ -4,24 +4,28 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.DialogFragment
+import com.example.dd_app.R
 import com.example.dd_app.dataFrom.DataFromDB
 import com.example.dd_app.dataFrom.DataFromNetwork
 import com.example.dd_app.dataSource.AccountData
+import com.example.dd_app.dataSource.GameData
 import com.example.dd_app.databinding.DialogFragmentDelAccountBinding
 import com.example.dd_app.fragments.contact.navigator
 import com.example.dd_app.help_components.DaggerAppComponent
 import javax.inject.Inject
 
-class DelAccountFragment: DialogFragment() {
+class SureDelGameFragment: DialogFragment() {
     private lateinit var binding: DialogFragmentDelAccountBinding
     @Inject lateinit var dataBase: DataFromDB
     @Inject lateinit var netHelper: DataFromNetwork
     private lateinit var acc: AccountData
+    private lateinit var game: GameData
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         arguments?.let {
             acc = it.getSerializable(ARG_PARAM1) as AccountData
+            game = it.getSerializable(ARG_PARAM2) as GameData
         }
     }
 
@@ -33,6 +37,7 @@ class DelAccountFragment: DialogFragment() {
             .inject(this)
         dataBase.initDataBase(requireContext())
 
+        val title = binding.title
         val cancel = binding.exitBtn
         val confirm = binding.dellBtn
 
@@ -40,15 +45,28 @@ class DelAccountFragment: DialogFragment() {
             this.onDestroyView()
         }
 
-        confirm.setOnClickListener {
-            val thr = Thread(kotlinx.coroutines.Runnable {
-                dataBase.clearAccountTable()
-                val str = acc.toJson()
-                netHelper.dellAccount(str)
+        if(acc.login != game.masterID) {
+            title.text = getString(R.string.sure_leave_game_btn)
+            confirm.setOnClickListener {
                 this.onDestroyView()
-                navigator().goToLoginFrag()
-            })
-            thr.start()
+                val thr = Thread(kotlinx.coroutines.Runnable {
+                    netHelper.updGameByDelCh(game.id, acc.id)
+                    navigator().setGamesFragment(acc)
+                })
+                thr.start()
+            }
+        }
+        else {
+            title.text = getString(R.string.sure_del_game_btn)
+            confirm.setOnClickListener {
+                this.onDestroyView()
+                val thr = Thread(kotlinx.coroutines.Runnable {
+                    netHelper.dellGame(game.toJson())
+                })
+                thr.start()
+                Thread.sleep(1000)
+                navigator().setGamesFragment(acc)
+            }
         }
 
         return binding.root
@@ -59,10 +77,14 @@ class DelAccountFragment: DialogFragment() {
         private val ARG_PARAM1 = "items"
 
         @JvmStatic
-        fun newInstance(item: AccountData) =
-            DelAccountFragment().apply {
+        private val ARG_PARAM2 = "item2"
+
+        @JvmStatic
+        fun newInstance(item: AccountData, gameItem: GameData) =
+            SureDelGameFragment().apply {
                 arguments = Bundle().apply {
                     putSerializable(ARG_PARAM1, item)
+                    putSerializable(ARG_PARAM2, gameItem)
                 }
             }
     }

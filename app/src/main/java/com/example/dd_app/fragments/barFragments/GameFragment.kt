@@ -10,6 +10,7 @@ import com.example.dd_app.dataFrom.DataFromNetwork
 import com.example.dd_app.dataSource.*
 import com.example.dd_app.databinding.FragmentGameBinding
 import com.example.dd_app.fragments.dialogFragments.JoinGameFragment
+import com.example.dd_app.fragments.dialogFragments.WhatDoWithGameFragment
 import com.example.dd_app.help_components.DaggerAppComponent
 import com.example.dd_app.help_components.GoToGame
 import javax.inject.Inject
@@ -64,7 +65,8 @@ class GameFragment : Fragment() {
         val arrGames = GamesData.fromJson(netHelper.str)
         val adapter = GamesAdapter(requireContext(), arrGames, object : GoToGame {
             override fun onClicked(data: GameData){
-                println("Идём в новый фрагмент")
+                val dialog = WhatDoWithGameFragment.newInstance(acc, data)
+                dialog.show(parentFragmentManager, "customDialog")
             }
         })
         binding.SpisRV.adapter = adapter
