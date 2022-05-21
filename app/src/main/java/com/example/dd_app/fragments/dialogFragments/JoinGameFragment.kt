@@ -9,6 +9,7 @@ import com.example.dd_app.dataFrom.DataFromNetwork
 import com.example.dd_app.dataSource.AccountData
 import com.example.dd_app.dataSource.GameData
 import com.example.dd_app.databinding.DialogFragmentJoinGameBinding
+import com.example.dd_app.fragments.contact.navigator
 import com.example.dd_app.help_components.DaggerAppComponent
 import javax.inject.Inject
 
@@ -54,12 +55,13 @@ class JoinGameFragment: DialogFragment() {
                                     requireActivity().runOnUiThread {
                                         this.onDestroyView()
                                     }
-                                    println(netHelper.str)
                                     val myGame = GameData.fromJson(netHelper.str)
                                     if (myGame != null) {
-                                        println(myGame.password)
+                                        if(acc.login != myGame.masterID)
+                                            navigator().goToGamerGameFrag(acc, myGame)
+                                        else
+                                            navigator().goToMasterGameFrag(acc, myGame)
                                     }
-                                    //Тут функция перехода на новый фрагмен (фрагмент игры)
                                 }
                                 else {
                                     requireActivity().runOnUiThread {

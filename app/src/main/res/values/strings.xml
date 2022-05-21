@@ -51,4 +51,7 @@
     <string name="title_game">Игры</string>
     <string name="title_char">Персонажи</string>
     <string name="title_acc">Аккаунт</string>
+    <string name="title_cubes">Кости</string>
+    <string name="title_nav_game">Игра</string>
+    <string name="title_gamers">Игроки</string>
 </resources>

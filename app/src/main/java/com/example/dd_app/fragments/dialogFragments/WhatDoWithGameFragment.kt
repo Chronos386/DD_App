@@ -53,7 +53,10 @@ class WhatDoWithGameFragment: DialogFragment() {
         }
         enterBtn.setOnClickListener {
             this.onDestroyView()
-            println("Теперь точно идём в новый фрагмент. Обещаю)")
+            if(acc.login != game.masterID)
+                navigator().goToGamerGameFrag(acc, game)
+            else
+                navigator().goToMasterGameFrag(acc, game)
         }
 
         return binding.root

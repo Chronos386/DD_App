@@ -12,7 +12,6 @@ import com.example.dd_app.dataSource.AccountData
 import com.example.dd_app.databinding.FragmentMainBinding
 import com.example.dd_app.fragments.contact.navigator
 import com.example.dd_app.help_components.DaggerAppComponent
-import com.example.dd_app.help_components.isOnline
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import javax.inject.Inject
 

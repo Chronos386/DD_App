@@ -2,8 +2,10 @@ package com.example.dd_app.help_components
 import com.example.dd_app.MainActivity
 import com.example.dd_app.dataFrom.DataFromDB
 import com.example.dd_app.dataFrom.DataFromNetwork
+import com.example.dd_app.fragments.GamerSpecificGameFragment
 import com.example.dd_app.fragments.LoginFragment
 import com.example.dd_app.fragments.MainFragment
+import com.example.dd_app.fragments.MasterSpecificGameFragment
 import com.example.dd_app.fragments.barFragments.AccountFragment
 import com.example.dd_app.fragments.barFragments.CharactersFragment
 import com.example.dd_app.fragments.barFragments.GameFragment
@@ -19,6 +21,8 @@ interface AppComponent {
     fun inject(activity: MainActivity)
     fun inject(fragment: LoginFragment)
     fun inject(fragment: MainFragment)
+    fun inject(fragment: MasterSpecificGameFragment)
+    fun inject(fragment: GamerSpecificGameFragment)
     fun inject(fragment: AccountFragment)
     fun inject(fragment: DelAccountFragment)
     fun inject(fragment: UpdAccountPswFragment)
