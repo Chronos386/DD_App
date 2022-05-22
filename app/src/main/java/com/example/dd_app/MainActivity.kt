@@ -60,7 +60,7 @@ class MainActivity : AppCompatActivity(), Navigator {
         }
     }
 
-    override fun goToMainFrag(){
+    override fun goToMainFrag() {
         if(isOnline(this)) {
             supportFragmentManager
                 .beginTransaction()
@@ -73,7 +73,7 @@ class MainActivity : AppCompatActivity(), Navigator {
         }
     }
 
-    override fun goToGamerGameFrag(acc: AccountData, game: GameData){
+    override fun goToGamerGameFrag(acc: AccountData, game: GameData) {
         if(isOnline(this)) {
             val fragment = GamerSpecificGameFragment.newInstance(
                 item = acc,
@@ -91,7 +91,7 @@ class MainActivity : AppCompatActivity(), Navigator {
         }
     }
 
-    override fun goToMasterGameFrag(acc: AccountData, game: GameData){
+    override fun goToMasterGameFrag(acc: AccountData, game: GameData) {
         if(isOnline(this)) {
             val fragment = MasterSpecificGameFragment.newInstance(
                 item = acc,
