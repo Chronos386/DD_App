@@ -1,14 +1,21 @@
 package com.example.dd_app.fragments.generalBarFragments
+
+import android.graphics.Color
 import android.os.Bundle
+import android.text.TextUtils.replace
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ArrayAdapter
 import androidx.fragment.app.Fragment
+import com.example.dd_app.R
 import com.example.dd_app.dataFrom.DataFromNetwork
 import com.example.dd_app.dataSource.AccountData
 import com.example.dd_app.dataSource.GameData
 import com.example.dd_app.databinding.FragmentDiceBinding
 import javax.inject.Inject
+import kotlin.random.Random
+
 
 class DiceFragment : Fragment() {
     private lateinit var binding: FragmentDiceBinding
@@ -28,6 +35,30 @@ class DiceFragment : Fragment() {
     Bundle?): View {
         binding = FragmentDiceBinding.inflate(inflater, container, false)
 
+        val spinDice = binding.spinnerDice
+        val spinCountDice = binding.spinnerCountDice
+
+        ArrayAdapter.createFromResource(requireContext(), R.array.dice_array, R.layout.spin_item)
+            .also { adapter -> adapter.setDropDownViewResource(android.R
+            .layout.simple_spinner_dropdown_item)
+            spinDice.adapter = adapter
+        }
+        ArrayAdapter.createFromResource(requireContext(), R.array.count_dice_array, R.layout
+            .spin_item).also { adapter -> adapter.setDropDownViewResource(android.R
+            .layout.simple_spinner_dropdown_item)
+            spinCountDice.adapter = adapter
+        }
+
+        binding.gameBtn.setOnClickListener {
+            val diceFaces = spinDice.getSelectedItem().toString().replace("D", "")
+                .toInt()
+            val countDice = spinCountDice.getSelectedItem().toString().toInt()
+            var polsNumb = 0
+            for (i in 1..countDice) {
+                polsNumb += (1..diceFaces).random()
+            }
+            binding.diceNumber.text = polsNumb.toString()
+        }
         return binding.root
     }
 

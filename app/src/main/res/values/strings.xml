@@ -1,6 +1,27 @@
 <resources>
+    <string-array name="dice_array">
+        <item>D4</item>
+        <item>D6</item>
+        <item>D8</item>
+        <item>D10</item>
+        <item>D12</item>
+        <item>D20</item>
+    </string-array>
+    <string-array name="count_dice_array">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+        <item>7</item>
+        <item>8</item>
+        <item>9</item>
+        <item>10</item>
+    </string-array>
     <string name="app_name">DD_App</string>
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="choose_dice">Выбранная кость</string>
+    <string name="choose_numb_dice">Колличество костей</string>
     <string name="title_activity_main2">MainActivity2</string>
     <string name="prompt_account">Аккаунт</string>
     <string name="prompt_password">Пароль</string>
@@ -18,15 +39,18 @@
     <string name="sure_del_account">Уверены, что хотите удалить аккаунт?</string>
     <string name="change_password">Смена пароля</string>
     <string name="join_game">Присоединиться к игре</string>
+    <string name="dice_game">Игровые кости</string>
     <string name="new_game">Создание новой игры</string>
     <string name="change_password_btn">Подтвердить</string>
     <string name="join_game_btn">Присоединиться</string>
     <string name="enter_game_btn">Войти в игру</string>
     <string name="leave_game_btn">Покинуть игру навсегда</string>
+    <string name="exit_game">Выйти из игры</string>
     <string name="sure_leave_game_btn">Вы точно хотите покинуть игру навсегда?</string>
     <string name="sure_del_game_btn">Вы точно хотите удалить игру навсегда?</string>
     <string name="del_game_btn">Удалить игру</string>
     <string name="create_game_btn">Создать новую игру</string>
+    <string name="go_dice_btn">Бросить кости</string>
     <string name="no_characters">У вас ещё нет ни одного персонажа</string>
     <string name="no_games">У вас ещё нет ни одной игры</string>
     <string name="add_games">Добавить новую игру</string>

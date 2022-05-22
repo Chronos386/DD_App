@@ -4,10 +4,12 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import com.example.dd_app.R
 import com.example.dd_app.dataFrom.DataFromNetwork
 import com.example.dd_app.dataSource.AccountData
 import com.example.dd_app.dataSource.GameData
 import com.example.dd_app.databinding.FragmentHomeBinding
+import com.example.dd_app.fragments.dialogFragments.SureDelGameFragment
 import javax.inject.Inject
 
 class HomeFragment : Fragment() {
@@ -27,6 +29,22 @@ class HomeFragment : Fragment() {
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState:
     Bundle?): View {
         binding = FragmentHomeBinding.inflate(inflater, container, false)
+
+        binding.nameGame.text = game.gameName
+        binding.exitBtn.setOnClickListener {
+            requireActivity().onBackPressed()
+        }
+        if (acc.login != game.masterID) {
+            binding.dellBtn.text = getString(R.string.leave_game_btn)
+        }
+        else {
+            binding.dellBtn.text = getString(R.string.del_game_btn)
+        }
+        binding.dellBtn.setOnClickListener {
+            val dialog = SureDelGameFragment.newInstance(acc, game)
+            dialog.flag = 1
+            dialog.show(parentFragmentManager, "customDialogFrag")
+        }
 
         return binding.root
     }

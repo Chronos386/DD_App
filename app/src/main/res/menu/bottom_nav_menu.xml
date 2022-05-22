@@ -3,7 +3,7 @@
     android:background="@color/black">
 
     <item
-        android:id="@+id/navigation_home"
+        android:id="@+id/navigation_home_1"
         android:icon="@drawable/ic_baseline_sports_esports_24"
         android:title="@string/title_game" />
 

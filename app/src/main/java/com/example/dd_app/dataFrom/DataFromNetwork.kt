@@ -43,6 +43,12 @@ class DataFromNetwork {
         request = Request.Builder()
     }
 
+    fun getCharactersByAccAndGame(accID: Long, gameID: Long) {
+        request.url("http://hyrule.ru/table/character/$accID/$gameID")
+        client.newCall(request.build()).execute().use { response -> str = response.body!!.string() }
+        request = Request.Builder()
+    }
+
     fun getGamesByAccount(id: Long) {
         request.url("http://hyrule.ru/account/games/$id")
         client.newCall(request.build()).execute().use { response -> str = response.body!!.string() }

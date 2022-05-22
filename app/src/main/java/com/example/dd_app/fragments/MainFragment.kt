@@ -41,7 +41,7 @@ class MainFragment : Fragment(), BottomNavigationView.OnNavigationItemSelectedLi
 
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
         when(item.itemId){
-            R.id.navigation_home -> navigator().setGamesFragment(dataAcc)
+            R.id.navigation_home_1 -> navigator().setGamesFragment(dataAcc)
             R.id.navigation_dashboard -> navigator().setCharactersFragment(dataAcc)
             R.id.navigation_notifications -> navigator().setAccountFragment(dataAcc)
         }

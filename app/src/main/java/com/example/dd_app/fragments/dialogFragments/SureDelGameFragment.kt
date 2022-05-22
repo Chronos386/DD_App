@@ -20,6 +20,7 @@ class SureDelGameFragment: DialogFragment() {
     @Inject lateinit var netHelper: DataFromNetwork
     private lateinit var acc: AccountData
     private lateinit var game: GameData
+    var flag = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -49,9 +50,12 @@ class SureDelGameFragment: DialogFragment() {
             title.text = getString(R.string.sure_leave_game_btn)
             confirm.setOnClickListener {
                 this.onDestroyView()
+                if (flag == 1)
+                    requireActivity().onBackPressed()
                 val thr = Thread(kotlinx.coroutines.Runnable {
                     netHelper.updGameByDelCh(game.id, acc.id)
-                    navigator().setGamesFragment(acc)
+                    if (flag != 1)
+                        navigator().setGamesFragment(acc)
                 })
                 thr.start()
             }
@@ -60,12 +64,15 @@ class SureDelGameFragment: DialogFragment() {
             title.text = getString(R.string.sure_del_game_btn)
             confirm.setOnClickListener {
                 this.onDestroyView()
+                if (flag == 1)
+                    requireActivity().onBackPressed()
                 val thr = Thread(kotlinx.coroutines.Runnable {
                     netHelper.dellGame(game.toJson())
                 })
                 thr.start()
                 Thread.sleep(1000)
-                navigator().setGamesFragment(acc)
+                if (flag != 1)
+                    navigator().setGamesFragment(acc)
             }
         }
 

@@ -1,7 +1,63 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    tools:context=".fragments.barFragments.AccountFragment"
+    android:background="#31322E">
 
+    <ImageView
+        android:id="@+id/image_anime"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_marginTop="20dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:contentDescription="@string/action_sign_in"
+        android:scaleType="centerCrop"
+        android:src="@drawable/dice"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/name_game"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="30dp"
+        android:layout_marginTop="20dp"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="30sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/image_anime" />
+
+    <Button
+        android:id="@+id/exit_btn"
+        android:layout_width="280dp"
+        android:layout_height="80dp"
+        android:layout_gravity="start"
+        android:layout_marginBottom="20dp"
+        android:backgroundTint="#985921"
+        android:text="@string/exit_game"
+        android:textSize="15sp"
+        app:layout_constraintBottom_toTopOf="@+id/dell_btn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/dell_btn"
+        android:layout_width="280dp"
+        android:layout_height="80dp"
+        android:layout_gravity="start"
+        android:layout_marginBottom="100dp"
+        android:textSize="15sp"
+        android:backgroundTint="#C13030"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

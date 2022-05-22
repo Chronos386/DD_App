@@ -34,6 +34,7 @@
         <entry key="app/src/main/res/layout/fragment_master_specific_game.xml" value="0.30885416666666665" />
         <entry key="app/src/main/res/layout/fragment_notifications.xml" value="0.2947916666666667" />
         <entry key="app/src/main/res/layout/games_item.xml" value="0.3098958333333333" />
+        <entry key="app/src/main/res/layout/spin_item.xml" value="0.30885416666666665" />
         <entry key="app/src/main/res/menu/bottom_nav_menu.xml" value="0.3283721923828125" />
         <entry key="app/src/main/res/menu/bottom_nav_menu_gamer.xml" value="0.30193634033203126" />
         <entry key="app/src/main/res/menu/bottom_nav_menu_master.xml" value="0.3098958333333333" />
