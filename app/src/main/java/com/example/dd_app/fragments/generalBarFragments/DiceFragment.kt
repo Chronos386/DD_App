@@ -1,8 +1,5 @@
 package com.example.dd_app.fragments.generalBarFragments
-
-import android.graphics.Color
 import android.os.Bundle
-import android.text.TextUtils.replace
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -14,7 +11,6 @@ import com.example.dd_app.dataSource.AccountData
 import com.example.dd_app.dataSource.GameData
 import com.example.dd_app.databinding.FragmentDiceBinding
 import javax.inject.Inject
-import kotlin.random.Random
 
 
 class DiceFragment : Fragment() {

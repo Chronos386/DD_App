@@ -16,6 +16,7 @@ interface Navigator {
     fun setGamerHomeFragment(acc: AccountData, game: GameData)
     fun setMasterHomeFragment(acc: AccountData, game: GameData)
     fun setMasterGamersFragment(acc: AccountData, game: GameData)
+    fun goToMasterGamerCharactersFrag(accGamer: AccountData, accMaster: AccountData, game: GameData)
     fun setGamerGameCharactersFragment(acc: AccountData, game: GameData)
     fun setMasterGameCharactersFragment(acc: AccountData, game: GameData)
     fun setGamesFragment(acc: AccountData)

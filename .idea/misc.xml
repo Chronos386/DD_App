@@ -20,6 +20,7 @@
         <entry key="app/src/main/res/layout/dialog_fragment_make_new_game.xml" value="0.3098958333333333" />
         <entry key="app/src/main/res/layout/dialog_fragment_upd_psw_account.xml" value="0.3098958333333333" />
         <entry key="app/src/main/res/layout/dialog_fragment_what_do_with_game.xml" value="0.2441640783239294" />
+        <entry key="app/src/main/res/layout/dialog_fragment_what_do_with_gamer.xml" value="0.2710283632631655" />
         <entry key="app/src/main/res/layout/fragment_accaunt.xml" value="0.3098958333333333" />
         <entry key="app/src/main/res/layout/fragment_account.xml" value="0.3098958333333333" />
         <entry key="app/src/main/res/layout/fragment_characters.xml" value="0.3098958333333333" />
@@ -33,6 +34,7 @@
         <entry key="app/src/main/res/layout/fragment_main.xml" value="0.28072916666666664" />
         <entry key="app/src/main/res/layout/fragment_master_specific_game.xml" value="0.30885416666666665" />
         <entry key="app/src/main/res/layout/fragment_notifications.xml" value="0.2947916666666667" />
+        <entry key="app/src/main/res/layout/gamers_item.xml" value="0.30885416666666665" />
         <entry key="app/src/main/res/layout/games_item.xml" value="0.3098958333333333" />
         <entry key="app/src/main/res/layout/spin_item.xml" value="0.30885416666666665" />
         <entry key="app/src/main/res/menu/bottom_nav_menu.xml" value="0.3283721923828125" />

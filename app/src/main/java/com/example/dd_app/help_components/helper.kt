@@ -3,6 +3,7 @@ import android.content.Context
 import android.net.ConnectivityManager
 import android.net.NetworkCapabilities
 import android.util.Log
+import com.example.dd_app.dataSource.AccountData
 import com.example.dd_app.dataSource.CharacterData
 import com.example.dd_app.dataSource.GameData
 
@@ -35,4 +36,8 @@ interface GoToCharacter {
 
 interface GoToGame {
     fun onClicked(data: GameData)
+}
+
+interface GoToAcc {
+    fun onClicked(data: AccountData)
 }

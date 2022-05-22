@@ -11,6 +11,8 @@ import com.example.dd_app.fragments.barFragments.CharactersFragment
 import com.example.dd_app.fragments.barFragments.GameFragment
 import com.example.dd_app.fragments.dialogFragments.*
 import com.example.dd_app.fragments.generalBarFragments.GameCharactersFragment
+import com.example.dd_app.fragments.masterBarFragments.GamersCharactersInGameFragment
+import com.example.dd_app.fragments.masterBarFragments.GamersFragment
 import dagger.Component
 import dagger.Module
 import dagger.Provides
@@ -25,11 +27,15 @@ interface AppComponent {
     fun inject(fragment: MasterSpecificGameFragment)
     fun inject(fragment: GamerSpecificGameFragment)
     fun inject(fragment: GameCharactersFragment)
+    fun inject(fragment: GamersCharactersInGameFragment)
     fun inject(fragment: AccountFragment)
+    fun inject(fragment: GamersFragment)
     fun inject(fragment: DelAccountFragment)
     fun inject(fragment: UpdAccountPswFragment)
     fun inject(fragment: WhatDoWithGameFragment)
+    fun inject(fragment: WhatDoWithGamerFragment)
     fun inject(fragment: SureDelGameFragment)
+    fun inject(fragment: SureDelGamerFragment)
     fun inject(fragment: CharactersFragment)
     fun inject(fragment: GameFragment)
     fun inject(fragment: JoinGameFragment)

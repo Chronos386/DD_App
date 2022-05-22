@@ -55,6 +55,12 @@ class DataFromNetwork {
         request = Request.Builder()
     }
 
+    fun getAccountsByGame(gameID: Long) {
+        request.url("http://hyrule.ru/game/accounts/$gameID")
+        client.newCall(request.build()).execute().use { response -> str = response.body!!.string() }
+        request = Request.Builder()
+    }
+
     fun addNewAccount(body: String) {
         val mediaType = "application/json; charset=utf-8".toMediaType()
         val requestBody = body.toRequestBody(mediaType)

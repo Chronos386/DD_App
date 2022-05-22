@@ -45,6 +45,9 @@
     <string name="join_game_btn">Присоединиться</string>
     <string name="enter_game_btn">Войти в игру</string>
     <string name="leave_game_btn">Покинуть игру навсегда</string>
+    <string name="expel_game_btn">Выгнать игрока навсегда</string>
+    <string name="see_gamer_char_btn">Посмотреть персонажей игрока</string>
+    <string name="sure_expel_gamer_btn">Вы уверены, что хотите выгнать игрока навсегда?</string>
     <string name="exit_game">Выйти из игры</string>
     <string name="sure_leave_game_btn">Вы точно хотите покинуть игру навсегда?</string>
     <string name="sure_del_game_btn">Вы точно хотите удалить игру навсегда?</string>
@@ -52,7 +55,9 @@
     <string name="create_game_btn">Создать новую игру</string>
     <string name="go_dice_btn">Бросить кости</string>
     <string name="no_characters">У вас ещё нет ни одного персонажа</string>
+    <string name="no_characters_game">У вас ещё нет ни одного персонажа в этой игре</string>
     <string name="no_games">У вас ещё нет ни одной игры</string>
+    <string name="no_gamers">В Вашей игре ещё нет ни одного игрока</string>
     <string name="add_games">Добавить новую игру</string>
     <string name="hp_character">Здоровье: </string>
     <string name="power_character">Сила: </string>

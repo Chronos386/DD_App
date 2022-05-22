@@ -21,6 +21,7 @@ import com.example.dd_app.fragments.barFragments.GameFragment
 import com.example.dd_app.fragments.generalBarFragments.DiceFragment
 import com.example.dd_app.fragments.generalBarFragments.GameCharactersFragment
 import com.example.dd_app.fragments.generalBarFragments.HomeFragment
+import com.example.dd_app.fragments.masterBarFragments.GamersCharactersInGameFragment
 import com.example.dd_app.fragments.masterBarFragments.GamersFragment
 import javax.inject.Inject
 
@@ -79,6 +80,26 @@ class MainActivity : AppCompatActivity(), Navigator {
         if(isOnline(this)) {
             val fragment = GamerSpecificGameFragment.newInstance(
                 item = acc,
+                gameItem = game
+            )
+            supportFragmentManager
+                .beginTransaction()
+                .addToBackStack(null)
+                .replace(R.id.mainFragmentContainer, fragment)
+                .commit()
+        }
+        else {
+            val toastTXT = "Отсутствует подключение к интернету"
+            Toast.makeText(applicationContext, toastTXT, Toast.LENGTH_LONG).show()
+        }
+    }
+
+    override fun goToMasterGamerCharactersFrag(accGamer: AccountData, accMaster: AccountData,
+                                               game: GameData) {
+        if(isOnline(this)) {
+            val fragment = GamersCharactersInGameFragment.newInstance(
+                gamer = accGamer,
+                master = accMaster,
                 gameItem = game
             )
             supportFragmentManager
