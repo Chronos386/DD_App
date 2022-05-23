@@ -50,6 +50,7 @@
     <string name="sure_expel_gamer_btn">Вы уверены, что хотите выгнать игрока навсегда?</string>
     <string name="exit_game">Выйти из игры</string>
     <string name="sure_leave_game_btn">Вы точно хотите покинуть игру навсегда?</string>
+    <string name="sure_del_character_btn">Вы точно удалить этого персонажа?</string>
     <string name="sure_del_game_btn">Вы точно хотите удалить игру навсегда?</string>
     <string name="del_game_btn">Удалить игру</string>
     <string name="create_game_btn">Создать новую игру</string>
@@ -83,4 +84,28 @@
     <string name="title_cubes">Кости</string>
     <string name="title_nav_game">Игра</string>
     <string name="title_gamers">Игроки</string>
+    <string name="race">Раса</string>
+    <string name="var_race">Подраса</string>
+    <string name="classes">Класс</string>
+    <string name="weapon">Оружие</string>
+    <string name="armor">Броня</string>
+    <string name="spell_char">Посмотреть заклинания</string>
+    <string name="redact_char">Редактировать персонажа</string>
+    <string name="dell_char">Удалить персонажа</string>
+    <string name="incr_char">Повышение характеристик: </string>
+    <string name="worldview">Мировоззрение: </string>
+    <string name="size">Размер: </string>
+    <string name="speed">Скорость: </string>
+    <string name="foot">футов</string>
+    <string name="description">Описание: </string>
+    <string name="add_feat">Доп. описание: </string>
+    <string name="master_bonus">Бонус мастерства: </string>
+    <string name="numb_spell">Кол-во заклинаний: </string>
+    <string name="price">Цена: </string>
+    <string name="gold_coins">зм.</string>
+    <string name="damage">Урон: </string>
+    <string name="weight">Вес: </string>
+    <string name="weight_">фнт.</string>
+    <string name="steal_hindr">Помеха скрытности: </string>
+    <string name="actions_char">Действия</string>
 </resources>

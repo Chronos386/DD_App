@@ -28,50 +28,40 @@ class CharacterInformFragment: DialogFragment() {
             false)
         Picasso.get().load(chData.pictID).fit().into(binding.icoCharacter)
         binding.nameCharacter.text = chData.name
-        var str = SpannableStringBuilder()
-            .bold { append(requireContext().getString(R.string.hp_character)) }
+        var str = SpannableStringBuilder().bold { append(requireContext().getString(R.string.hp_character)) }
         str.append(" " + chData.hp)
         binding.hp.text = str
-        str = SpannableStringBuilder()
-            .bold { append(requireContext().getString(R.string.power_character)) }
+        str = SpannableStringBuilder().bold { append(requireContext().getString(R.string.power_character)) }
         str.append(" " + chData.power)
         binding.power.text = str
-        str = SpannableStringBuilder()
-            .bold { append(requireContext().getString(R.string.agility_character)) }
+        str = SpannableStringBuilder().bold { append(requireContext().getString(R.string.agility_character)) }
         str.append(" " + chData.agility)
         binding.agility.text = str
-        str = SpannableStringBuilder()
-            .bold { append(requireContext().getString(R.string.bodyType_character)) }
+        str = SpannableStringBuilder().bold { append(requireContext().getString(R.string.bodyType_character)) }
         str.append(" " + chData.bodyType)
         binding.bodyType.text = str
-        str = SpannableStringBuilder()
-            .bold { append(requireContext().getString(R.string.intellect_character)) }
+        str = SpannableStringBuilder().bold { append(requireContext().getString(R.string.intellect_character)) }
         str.append(" " + chData.intellect)
         binding.intellect.text = str
-        str = SpannableStringBuilder()
-            .bold { append(requireContext().getString(R.string.wisdom_character)) }
+        str = SpannableStringBuilder().bold { append(requireContext().getString(R.string.wisdom_character)) }
         str.append(" " + chData.wisdom)
         binding.wisdom.text = str
-        str = SpannableStringBuilder()
-            .bold { append(requireContext().getString(R.string.charisma_character)) }
+        str = SpannableStringBuilder().bold { append(requireContext().getString(R.string.charisma_character)) }
         str.append(" " + chData.charisma)
         binding.charisma.text = str
-        str = SpannableStringBuilder()
-            .bold { append(requireContext().getString(R.string.dmg_buff_characters)) }
+        str = SpannableStringBuilder().bold { append(requireContext().getString(R.string.dmg_buff_characters)) }
         if(!chData.dmgBuff)
             str.append(" " + requireContext().getString(R.string.absent))
         else
             str.append(" " + requireContext().getString(R.string.present))
         binding.dmgBuff.text = str
-        str = SpannableStringBuilder()
-            .bold { append(requireContext().getString(R.string.hp_buff_characters)) }
+        str = SpannableStringBuilder().bold { append(requireContext().getString(R.string.hp_buff_characters)) }
         if(!chData.hpBuff)
             str.append(" " + requireContext().getString(R.string.absent))
         else
             str.append(" " + requireContext().getString(R.string.present))
         binding.hpBuff.text = str
-        str = SpannableStringBuilder()
-            .bold { append(requireContext().getString(R.string.notes_characters)) }
+        str = SpannableStringBuilder().bold { append(requireContext().getString(R.string.notes_characters)) }
         str.append(" " + chData.notes)
         binding.notes.text = str
         return binding.root

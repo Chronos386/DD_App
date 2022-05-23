@@ -6,12 +6,10 @@ import android.widget.Toast
 import com.example.dd_app.dataFrom.DataFromDB
 import com.example.dd_app.dataFrom.DataFromNetwork
 import com.example.dd_app.dataSource.AccountData
+import com.example.dd_app.dataSource.CharacterData
 import com.example.dd_app.dataSource.GameData
 import com.example.dd_app.databinding.ActivityMainBinding
-import com.example.dd_app.fragments.GamerSpecificGameFragment
-import com.example.dd_app.fragments.LoginFragment
-import com.example.dd_app.fragments.MainFragment
-import com.example.dd_app.fragments.MasterSpecificGameFragment
+import com.example.dd_app.fragments.*
 import com.example.dd_app.fragments.barFragments.AccountFragment
 import com.example.dd_app.fragments.barFragments.CharactersFragment
 import com.example.dd_app.fragments.contact.Navigator
@@ -101,6 +99,26 @@ class MainActivity : AppCompatActivity(), Navigator {
                 gamer = accGamer,
                 master = accMaster,
                 gameItem = game
+            )
+            supportFragmentManager
+                .beginTransaction()
+                .addToBackStack(null)
+                .replace(R.id.mainFragmentContainer, fragment)
+                .commit()
+        }
+        else {
+            val toastTXT = "Отсутствует подключение к интернету"
+            Toast.makeText(applicationContext, toastTXT, Toast.LENGTH_LONG).show()
+        }
+    }
+
+    override fun goToCharacterInfoFrag(acc: AccountData, character: CharacterData,
+                                       masterName: String) {
+        if(isOnline(this)) {
+            val fragment = CharacterFragment.newInstance(
+                account = acc,
+                characterItem = character,
+                masterName = masterName
             )
             supportFragmentManager
                 .beginTransaction()

@@ -13,6 +13,7 @@ import com.example.dd_app.dataSource.CharacterData
 import com.example.dd_app.dataSource.CharactersData
 import com.example.dd_app.dataSource.GameData
 import com.example.dd_app.databinding.FragmentGameBinding
+import com.example.dd_app.fragments.contact.navigator
 import com.example.dd_app.help_components.DaggerAppComponent
 import com.example.dd_app.help_components.GoToCharacter
 import javax.inject.Inject
@@ -66,8 +67,6 @@ class GameCharactersFragment : Fragment() {
         return binding.root
     }
 
-
-
     private fun setCharactersInform() {
         val linearLayoutManager = LinearLayoutManager(requireContext())
         linearLayoutManager.orientation = LinearLayoutManager.VERTICAL
@@ -75,8 +74,7 @@ class GameCharactersFragment : Fragment() {
         val arrCharacters = CharactersData.fromJson(netHelper.str)
         val adapter = CharactersAdapter(requireContext(), arrCharacters, object : GoToCharacter {
             override fun onClicked(data: CharacterData){
-                //Тут будет переход на страницу конкретного персонажа (для просмотра всех его характеристик)
-                //Следующее окно будет общее для мастера и игрока, а вот окно редактирования у них будет разное
+                navigator().goToCharacterInfoFrag(acc, data, game.masterID)
                 println("POP")
             }
         })

@@ -5,17 +5,13 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.DialogFragment
 import com.example.dd_app.R
-import com.example.dd_app.dataFrom.DataFromNetwork
 import com.example.dd_app.dataSource.AccountData
 import com.example.dd_app.dataSource.GameData
 import com.example.dd_app.databinding.DialogFragmentWhatDoWithGameBinding
 import com.example.dd_app.fragments.contact.navigator
-import com.example.dd_app.help_components.DaggerAppComponent
-import javax.inject.Inject
 
 class WhatDoWithGameFragment: DialogFragment() {
     private lateinit var binding: DialogFragmentWhatDoWithGameBinding
-    @Inject lateinit var netHelper: DataFromNetwork
     private lateinit var acc: AccountData
     private lateinit var game: GameData
 
@@ -31,9 +27,6 @@ class WhatDoWithGameFragment: DialogFragment() {
     Bundle?): View {
         binding = DialogFragmentWhatDoWithGameBinding.inflate(inflater, container,
             false)
-        DaggerAppComponent.builder()
-            .build()
-            .inject(this)
 
         val title = binding.title
         val enterBtn = binding.enterBtn

@@ -114,4 +114,52 @@ class DataFromNetwork {
         client.newCall(request.build()).execute().close()
         request = Request.Builder()
     }
+
+    fun getVarRaceByID(varRaceID: Long) {
+        request.url("http://hyrule.ru/table/var_race/$varRaceID")
+        client.newCall(request.build()).execute().use { response -> str = response.body!!.string() }
+        str = str.replace("[", "")
+        str = str.replace("]", "")
+        request = Request.Builder()
+    }
+
+    fun getRaceByID(raceID: Long) {
+        request.url("http://hyrule.ru/table/race/$raceID")
+        client.newCall(request.build()).execute().use { response -> str = response.body!!.string() }
+        str = str.replace("[", "")
+        str = str.replace("]", "")
+        request = Request.Builder()
+    }
+
+    fun getClassByID(classID: Long) {
+        request.url("http://hyrule.ru/table/class/$classID")
+        client.newCall(request.build()).execute().use { response -> str = response.body!!.string() }
+        str = str.replace("[", "")
+        str = str.replace("]", "")
+        request = Request.Builder()
+    }
+
+    fun getDescrByID(descID: Long) {
+        request.url("http://hyrule.ru/table/descript/$descID")
+        client.newCall(request.build()).execute().use { response -> str = response.body!!.string() }
+        str = str.replace("[", "")
+        str = str.replace("]", "")
+        request = Request.Builder()
+    }
+
+    fun getWeapByID(weapID: Long) {
+        request.url("http://hyrule.ru/table/weap/$weapID")
+        client.newCall(request.build()).execute().use { response -> str = response.body!!.string() }
+        str = str.replace("[", "")
+        str = str.replace("]", "")
+        request = Request.Builder()
+    }
+
+    fun getArmorByID(armID: Long) {
+        request.url("http://hyrule.ru/table/armor/$armID")
+        client.newCall(request.build()).execute().use { response -> str = response.body!!.string() }
+        str = str.replace("[", "")
+        str = str.replace("]", "")
+        request = Request.Builder()
+    }
 }

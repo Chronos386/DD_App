@@ -11,6 +11,7 @@ import com.example.dd_app.adapters.CharactersAdapter
 import com.example.dd_app.dataFrom.DataFromNetwork
 import com.example.dd_app.dataSource.*
 import com.example.dd_app.databinding.FragmentCharactersBinding
+import com.example.dd_app.fragments.contact.navigator
 import com.example.dd_app.fragments.dialogFragments.WhatDoWithGamerFragment
 import com.example.dd_app.help_components.DaggerAppComponent
 import com.example.dd_app.help_components.GoToAcc
@@ -70,9 +71,7 @@ class GamersCharactersInGameFragment : Fragment() {
         val arrCharacters = CharactersData.fromJson(netHelper.str)
         val adapter = CharactersAdapter(requireContext(), arrCharacters, object : GoToCharacter {
             override fun onClicked(data: CharacterData){
-                //Наконец-то идём смотреть чужого перса
-                //Идём с акком мастера и с инфой перса игрока (той, что дата)
-                println("POP3")
+                navigator().goToCharacterInfoFrag(accMaster, data, game.masterID)
             }
         })
         binding.SpisRV.adapter = adapter

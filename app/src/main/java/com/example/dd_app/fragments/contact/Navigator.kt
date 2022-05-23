@@ -1,6 +1,7 @@
 package com.example.dd_app.fragments.contact
 import androidx.fragment.app.Fragment
 import com.example.dd_app.dataSource.AccountData
+import com.example.dd_app.dataSource.CharacterData
 import com.example.dd_app.dataSource.GameData
 
 fun Fragment.navigator(): Navigator {
@@ -16,6 +17,7 @@ interface Navigator {
     fun setGamerHomeFragment(acc: AccountData, game: GameData)
     fun setMasterHomeFragment(acc: AccountData, game: GameData)
     fun setMasterGamersFragment(acc: AccountData, game: GameData)
+    fun goToCharacterInfoFrag(acc: AccountData, character: CharacterData, masterName: String)
     fun goToMasterGamerCharactersFrag(accGamer: AccountData, accMaster: AccountData, game: GameData)
     fun setGamerGameCharactersFragment(acc: AccountData, game: GameData)
     fun setMasterGameCharactersFragment(acc: AccountData, game: GameData)
