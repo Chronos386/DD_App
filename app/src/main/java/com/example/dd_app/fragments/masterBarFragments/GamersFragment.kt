@@ -9,8 +9,9 @@ import com.example.dd_app.R
 import com.example.dd_app.adapters.AccountsAdapter
 import com.example.dd_app.dataFrom.DataFromNetwork
 import com.example.dd_app.dataSource.*
+import com.example.dd_app.dataSource.arrays.AccountsData
 import com.example.dd_app.databinding.FragmentCharactersBinding
-import com.example.dd_app.fragments.dialogFragments.WhatDoWithGamerFragment
+import com.example.dd_app.fragments.dialogFragments.whatDoWith.WhatDoWithGamerFragment
 import com.example.dd_app.help_components.DaggerAppComponent
 import com.example.dd_app.help_components.GoToAcc
 import javax.inject.Inject

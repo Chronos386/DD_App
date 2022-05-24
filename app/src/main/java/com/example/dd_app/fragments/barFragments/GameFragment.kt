@@ -8,9 +8,10 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.dd_app.adapters.GamesAdapter
 import com.example.dd_app.dataFrom.DataFromNetwork
 import com.example.dd_app.dataSource.*
+import com.example.dd_app.dataSource.arrays.GamesData
 import com.example.dd_app.databinding.FragmentGameBinding
 import com.example.dd_app.fragments.dialogFragments.JoinGameFragment
-import com.example.dd_app.fragments.dialogFragments.WhatDoWithGameFragment
+import com.example.dd_app.fragments.dialogFragments.whatDoWith.WhatDoWithGameFragment
 import com.example.dd_app.help_components.DaggerAppComponent
 import com.example.dd_app.help_components.GoToGame
 import javax.inject.Inject

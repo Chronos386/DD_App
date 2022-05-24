@@ -1,4 +1,4 @@
-package com.example.dd_app.fragments.dialogFragments
+package com.example.dd_app.fragments.dialogFragments.shortInfo
 import android.os.Bundle
 import android.text.SpannableStringBuilder
 import android.view.LayoutInflater
@@ -11,7 +11,7 @@ import com.example.dd_app.dataSource.CharacterData
 import com.example.dd_app.databinding.DialogFragmentCharacterItemBinding
 import com.squareup.picasso.Picasso
 
-class CharacterInformFragment: DialogFragment() {
+class CharacterInfoFragment: DialogFragment() {
     private lateinit var binding: DialogFragmentCharacterItemBinding
     private lateinit var chData: CharacterData
 
@@ -73,7 +73,7 @@ class CharacterInformFragment: DialogFragment() {
 
         @JvmStatic
         fun newInstance(item: CharacterData) =
-            CharacterInformFragment().apply {
+            CharacterInfoFragment().apply {
                 arguments = Bundle().apply {
                     putSerializable(ARG_PARAM1, item)
                 }

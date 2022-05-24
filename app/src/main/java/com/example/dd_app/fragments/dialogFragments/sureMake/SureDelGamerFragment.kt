@@ -1,11 +1,10 @@
-package com.example.dd_app.fragments.dialogFragments
+package com.example.dd_app.fragments.dialogFragments.sureMake
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.DialogFragment
 import com.example.dd_app.R
-import com.example.dd_app.dataFrom.DataFromDB
 import com.example.dd_app.dataFrom.DataFromNetwork
 import com.example.dd_app.dataSource.AccountData
 import com.example.dd_app.dataSource.GameData
@@ -14,17 +13,18 @@ import com.example.dd_app.fragments.contact.navigator
 import com.example.dd_app.help_components.DaggerAppComponent
 import javax.inject.Inject
 
-class SureDelGameFragment: DialogFragment() {
+class SureDelGamerFragment: DialogFragment() {
     private lateinit var binding: DialogFragmentDelAccountBinding
     @Inject lateinit var netHelper: DataFromNetwork
     private lateinit var acc: AccountData
+    private lateinit var master: AccountData
     private lateinit var game: GameData
-    var flag = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         arguments?.let {
             acc = it.getSerializable(ARG_PARAM1) as AccountData
+            master = it.getSerializable(ARG_PARAM3) as AccountData
             game = it.getSerializable(ARG_PARAM2) as GameData
         }
     }
@@ -40,39 +40,19 @@ class SureDelGameFragment: DialogFragment() {
         val cancel = binding.exitBtn
         val confirm = binding.dellBtn
 
+        title.text = getString(R.string.sure_expel_gamer_btn)
         cancel.setOnClickListener {
             this.onDestroyView()
         }
 
-        if(acc.login != game.masterID) {
-            title.text = getString(R.string.sure_leave_game_btn)
-            confirm.setOnClickListener {
-                this.onDestroyView()
-                if (flag == 1)
-                    requireActivity().onBackPressed()
-                val thr = Thread(kotlinx.coroutines.Runnable {
-                    netHelper.updGameByDelCh(game.id, acc.id)
-                    Thread.sleep(1000)
-                    if (flag != 1)
-                        navigator().setGamesFragment(acc)
-                })
-                thr.start()
-            }
-        }
-        else {
-            title.text = getString(R.string.sure_del_game_btn)
-            confirm.setOnClickListener {
-                this.onDestroyView()
-                if (flag == 1)
-                    requireActivity().onBackPressed()
-                val thr = Thread(kotlinx.coroutines.Runnable {
-                    netHelper.dellGame(game.toJson())
-                })
-                thr.start()
+        confirm.setOnClickListener {
+            this.onDestroyView()
+            val thr = Thread(kotlinx.coroutines.Runnable {
+                netHelper.updGameByDelCh(game.id, acc.id)
                 Thread.sleep(1000)
-                if (flag != 1)
-                    navigator().setGamesFragment(acc)
-            }
+                navigator().setMasterGamersFragment(master, game)
+            })
+            thr.start()
         }
 
         return binding.root
@@ -86,11 +66,15 @@ class SureDelGameFragment: DialogFragment() {
         private val ARG_PARAM2 = "item2"
 
         @JvmStatic
-        fun newInstance(item: AccountData, gameItem: GameData) =
-            SureDelGameFragment().apply {
+        private val ARG_PARAM3 = "item3"
+
+        @JvmStatic
+        fun newInstance(item: AccountData, master: AccountData, gameItem: GameData) =
+            SureDelGamerFragment().apply {
                 arguments = Bundle().apply {
                     putSerializable(ARG_PARAM1, item)
                     putSerializable(ARG_PARAM2, gameItem)
+                    putSerializable(ARG_PARAM3, master)
                 }
             }
     }

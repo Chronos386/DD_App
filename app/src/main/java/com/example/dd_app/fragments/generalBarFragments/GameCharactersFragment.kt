@@ -10,8 +10,8 @@ import com.example.dd_app.adapters.CharactersAdapter
 import com.example.dd_app.dataFrom.DataFromNetwork
 import com.example.dd_app.dataSource.AccountData
 import com.example.dd_app.dataSource.CharacterData
-import com.example.dd_app.dataSource.CharactersData
 import com.example.dd_app.dataSource.GameData
+import com.example.dd_app.dataSource.arrays.CharactersData
 import com.example.dd_app.databinding.FragmentGameBinding
 import com.example.dd_app.fragments.contact.navigator
 import com.example.dd_app.help_components.DaggerAppComponent
@@ -44,8 +44,7 @@ class GameCharactersFragment : Fragment() {
         binding.massage.visibility = View.INVISIBLE
 
         binding.plusButton.setOnClickListener {
-            //Переход на фрагмент создания персонажа (он общий). Пойду делать этот фрагмент...
-            println("POP1")
+            navigator().goToNewCharacterFrag(acc, game, acc.id)
         }
 
         val thr = Thread(kotlinx.coroutines.Runnable {
@@ -75,7 +74,6 @@ class GameCharactersFragment : Fragment() {
         val adapter = CharactersAdapter(requireContext(), arrCharacters, object : GoToCharacter {
             override fun onClicked(data: CharacterData){
                 navigator().goToCharacterInfoFrag(acc, data, game.masterID)
-                println("POP")
             }
         })
         binding.SpisRV.adapter = adapter

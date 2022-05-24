@@ -1,4 +1,4 @@
-package com.example.dd_app.fragments.dialogFragments
+package com.example.dd_app.fragments.dialogFragments.whatDoWith
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -9,19 +9,18 @@ import com.example.dd_app.dataSource.AccountData
 import com.example.dd_app.dataSource.GameData
 import com.example.dd_app.databinding.DialogFragmentWhatDoWithGameBinding
 import com.example.dd_app.fragments.contact.navigator
+import com.example.dd_app.fragments.dialogFragments.sureMake.SureDelGameFragment
 
-class WhatDoWithGamerFragment: DialogFragment() {
+class WhatDoWithGameFragment: DialogFragment() {
     private lateinit var binding: DialogFragmentWhatDoWithGameBinding
-    private lateinit var accMaster: AccountData
-    private lateinit var accGamer: AccountData
+    private lateinit var acc: AccountData
     private lateinit var game: GameData
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         arguments?.let {
-            accGamer = it.getSerializable(ARG_PARAM1) as AccountData
-            accMaster = it.getSerializable(ARG_PARAM2) as AccountData
-            game = it.getSerializable(ARG_PARAM3) as GameData
+            acc = it.getSerializable(ARG_PARAM1) as AccountData
+            game = it.getSerializable(ARG_PARAM2) as GameData
         }
     }
 
@@ -29,22 +28,29 @@ class WhatDoWithGamerFragment: DialogFragment() {
     Bundle?): View {
         binding = DialogFragmentWhatDoWithGameBinding.inflate(inflater, container,
             false)
+
         val title = binding.title
         val enterBtn = binding.enterBtn
         val delBtn = binding.delBtn
 
-        title.text = accGamer.login
-        enterBtn.text = getString(R.string.see_gamer_char_btn)
-        delBtn.text = getString(R.string.expel_game_btn)
+        title.text = game.gameName
+        if(acc.login != game.masterID) {
+            delBtn.text = getString(R.string.leave_game_btn)
+        }
+        else {
+            delBtn.text = getString(R.string.del_game_btn)
+        }
         delBtn.setOnClickListener {
             this.onDestroyView()
-            val dialog = SureDelGamerFragment.newInstance(accGamer, accMaster, game)
+            val dialog = SureDelGameFragment.newInstance(acc, game)
             dialog.show(parentFragmentManager, "customDialog")
-
         }
         enterBtn.setOnClickListener {
             this.onDestroyView()
-            navigator().goToMasterGamerCharactersFrag(accGamer, accMaster, game)
+            if(acc.login != game.masterID)
+                navigator().goToGamerGameFrag(acc, game)
+            else
+                navigator().goToMasterGameFrag(acc, game)
         }
 
         return binding.root
@@ -58,15 +64,11 @@ class WhatDoWithGamerFragment: DialogFragment() {
         private val ARG_PARAM2 = "item2"
 
         @JvmStatic
-        private val ARG_PARAM3 = "item3"
-
-        @JvmStatic
-        fun newInstance(gamer: AccountData, master: AccountData, gameItem: GameData) =
-            WhatDoWithGamerFragment().apply {
+        fun newInstance(item: AccountData, gameItem: GameData) =
+            WhatDoWithGameFragment().apply {
                 arguments = Bundle().apply {
-                    putSerializable(ARG_PARAM1, gamer)
-                    putSerializable(ARG_PARAM2, master)
-                    putSerializable(ARG_PARAM3, gameItem)
+                    putSerializable(ARG_PARAM1, item)
+                    putSerializable(ARG_PARAM2, gameItem)
                 }
             }
     }

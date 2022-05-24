@@ -1,5 +1,6 @@
-package com.example.dd_app.dataSource
+package com.example.dd_app.dataSource.arrays
 import com.beust.klaxon.*
+import com.example.dd_app.dataSource.GameData
 import java.io.Serializable
 
 private val klaxon = Klaxon()

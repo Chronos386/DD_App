@@ -16,9 +16,8 @@ import com.example.dd_app.fragments.contact.Navigator
 import com.example.dd_app.help_components.DaggerAppComponent
 import com.example.dd_app.help_components.isOnline
 import com.example.dd_app.fragments.barFragments.GameFragment
-import com.example.dd_app.fragments.generalBarFragments.DiceFragment
-import com.example.dd_app.fragments.generalBarFragments.GameCharactersFragment
-import com.example.dd_app.fragments.generalBarFragments.HomeFragment
+import com.example.dd_app.fragments.baseFragments.*
+import com.example.dd_app.fragments.generalBarFragments.*
 import com.example.dd_app.fragments.masterBarFragments.GamersCharactersInGameFragment
 import com.example.dd_app.fragments.masterBarFragments.GamersFragment
 import javax.inject.Inject
@@ -119,6 +118,59 @@ class MainActivity : AppCompatActivity(), Navigator {
                 account = acc,
                 characterItem = character,
                 masterName = masterName
+            )
+            supportFragmentManager
+                .beginTransaction()
+                .addToBackStack(null)
+                .replace(R.id.mainFragmentContainer, fragment)
+                .commit()
+        }
+        else {
+            val toastTXT = "Отсутствует подключение к интернету"
+            Toast.makeText(applicationContext, toastTXT, Toast.LENGTH_LONG).show()
+        }
+    }
+
+    override fun goToRedactCharacterFrag(character: CharacterData) {
+        if(isOnline(this)) {
+            val fragment = RedactCharacterFragment.newInstance(
+                character = character
+            )
+            supportFragmentManager
+                .beginTransaction()
+                .addToBackStack(null)
+                .replace(R.id.mainFragmentContainer, fragment)
+                .commit()
+        }
+        else {
+            val toastTXT = "Отсутствует подключение к интернету"
+            Toast.makeText(applicationContext, toastTXT, Toast.LENGTH_LONG).show()
+        }
+    }
+
+    override fun goToSpellsFrag(classID: Long) {
+        if(isOnline(this)) {
+            val fragment = SpellsFragment.newInstance(
+                classID = classID
+            )
+            supportFragmentManager
+                .beginTransaction()
+                .addToBackStack(null)
+                .add(R.id.mainFragmentContainer, fragment)
+                .commit()
+        }
+        else {
+            val toastTXT = "Отсутствует подключение к интернету"
+            Toast.makeText(applicationContext, toastTXT, Toast.LENGTH_LONG).show()
+        }
+    }
+
+    override fun goToNewCharacterFrag(item: AccountData, gameItem: GameData, ownerID: Long) {
+        if(isOnline(this)) {
+            val fragment = CreateCharacterFragment.newInstance(
+                item = item,
+                gameItem = gameItem,
+                ownerID = ownerID
             )
             supportFragmentManager
                 .beginTransaction()

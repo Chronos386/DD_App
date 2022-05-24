@@ -9,6 +9,36 @@ class DataFromNetwork {
     private var request = Request.Builder()
     var str: String = ""
 
+    fun getAllClasses() {
+        request.url("http://hyrule.ru/table/class")
+        client.newCall(request.build()).execute().use { response -> str = response.body!!.string() }
+        request = Request.Builder()
+    }
+
+    fun getAllRaces() {
+        request.url("http://hyrule.ru/table/race")
+        client.newCall(request.build()).execute().use { response -> str = response.body!!.string() }
+        request = Request.Builder()
+    }
+
+    fun getAllVarRacesByRaceID(raceID: Long) {
+        request.url("http://hyrule.ru/types/var_race/$raceID")
+        client.newCall(request.build()).execute().use { response -> str = response.body!!.string() }
+        request = Request.Builder()
+    }
+
+    fun getAllWeapByClassID(classID: Long) {
+        request.url("http://hyrule.ru/class/weapon/$classID")
+        client.newCall(request.build()).execute().use { response -> str = response.body!!.string() }
+        request = Request.Builder()
+    }
+
+    fun getAllArmByClassID(classID: Long) {
+        request.url("http://hyrule.ru/class/armor/$classID")
+        client.newCall(request.build()).execute().use { response -> str = response.body!!.string() }
+        request = Request.Builder()
+    }
+
     fun checkAccountExist (name: String){
         request.url("http://hyrule.ru/exist/account/$name")
         client.newCall(request.build()).execute().use { response -> str = response.body!!.string() }
@@ -61,6 +91,12 @@ class DataFromNetwork {
         request = Request.Builder()
     }
 
+    fun getSpellsByClass(classID: Long) {
+        request.url("http://hyrule.ru/class/spell/$classID")
+        client.newCall(request.build()).execute().use { response -> str = response.body!!.string() }
+        request = Request.Builder()
+    }
+
     fun addNewAccount(body: String) {
         val mediaType = "application/json; charset=utf-8".toMediaType()
         val requestBody = body.toRequestBody(mediaType)
@@ -83,6 +119,33 @@ class DataFromNetwork {
         val mediaType = "application/json; charset=utf-8".toMediaType()
         val requestBody = body.toRequestBody(mediaType)
         request.url("http://hyrule.ru/delete/account")
+            .post(requestBody)
+        client.newCall(request.build()).execute().close()
+        request = Request.Builder()
+    }
+
+    fun dellCharacter(body: String) {
+        val mediaType = "application/json; charset=utf-8".toMediaType()
+        val requestBody = body.toRequestBody(mediaType)
+        request.url("http://hyrule.ru/delete/character")
+            .post(requestBody)
+        client.newCall(request.build()).execute().close()
+        request = Request.Builder()
+    }
+
+    fun addCharacter(body: String) {
+        val mediaType = "application/json; charset=utf-8".toMediaType()
+        val requestBody = body.toRequestBody(mediaType)
+        request.url("http://hyrule.ru/new/character")
+            .post(requestBody)
+        client.newCall(request.build()).execute().close()
+        request = Request.Builder()
+    }
+
+    fun redactCharacter(body: String) {
+        val mediaType = "application/json; charset=utf-8".toMediaType()
+        val requestBody = body.toRequestBody(mediaType)
+        request.url("http://hyrule.ru/update/character")
             .post(requestBody)
         client.newCall(request.build()).execute().close()
         request = Request.Builder()
@@ -128,6 +191,12 @@ class DataFromNetwork {
         client.newCall(request.build()).execute().use { response -> str = response.body!!.string() }
         str = str.replace("[", "")
         str = str.replace("]", "")
+        request = Request.Builder()
+    }
+
+    fun getPictByID(pictID: Long) {
+        request.url("http://hyrule.ru/table/picture/$pictID")
+        client.newCall(request.build()).execute().use { response -> str = response.body!!.string() }
         request = Request.Builder()
     }
 

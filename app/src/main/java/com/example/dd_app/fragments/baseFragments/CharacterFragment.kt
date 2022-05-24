@@ -1,4 +1,4 @@
-package com.example.dd_app.fragments
+package com.example.dd_app.fragments.baseFragments
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -8,7 +8,7 @@ import com.example.dd_app.R
 import com.example.dd_app.dataFrom.DataFromNetwork
 import com.example.dd_app.dataSource.*
 import com.example.dd_app.databinding.FragmentCharacterInfoPageBinding
-import com.example.dd_app.fragments.dialogFragments.WhatDoWithCharacterFragment
+import com.example.dd_app.fragments.dialogFragments.whatDoWith.WhatDoWithCharacterFragment
 import com.example.dd_app.help_components.DaggerAppComponent
 import com.squareup.picasso.Picasso
 import javax.inject.Inject

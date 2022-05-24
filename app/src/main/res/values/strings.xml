@@ -59,6 +59,7 @@
     <string name="no_characters_game">У вас ещё нет ни одного персонажа в этой игре</string>
     <string name="no_games">У вас ещё нет ни одной игры</string>
     <string name="no_gamers">В Вашей игре ещё нет ни одного игрока</string>
+    <string name="no_spell">У Вашего класса нет заклинаний</string>
     <string name="add_games">Добавить новую игру</string>
     <string name="hp_character">Здоровье: </string>
     <string name="power_character">Сила: </string>
@@ -71,6 +72,7 @@
     <string name="hp_buff_characters">Баффы/дебаффы здоровья: </string>
     <string name="notes_characters">Заметки: </string>
     <string name="name_game">Имя: </string>
+    <string name="name_spell">Название: </string>
     <string name="name_world">Мир: </string>
     <string name="name_game_master">Мастер игры: </string>
     <string name="yes">Да</string>
@@ -98,7 +100,7 @@
     <string name="speed">Скорость: </string>
     <string name="foot">футов</string>
     <string name="description">Описание: </string>
-    <string name="add_feat">Доп. описание: </string>
+    <string name="add_feat">Доп. умение: </string>
     <string name="master_bonus">Бонус мастерства: </string>
     <string name="numb_spell">Кол-во заклинаний: </string>
     <string name="price">Цена: </string>
@@ -108,4 +110,27 @@
     <string name="weight_">фнт.</string>
     <string name="steal_hindr">Помеха скрытности: </string>
     <string name="actions_char">Действия</string>
+    <string name="duration">Длительность: </string>
+    <string name="sec">сек.</string>
+    <string name="distance">Дальность: </string>
+    <string name="create_character">Создание персонажа</string>
+    <string name="name_character">Имя персонажа</string>
+    <string name="save_character">Сохранить персонажа</string>
+    <string name="hp">Здоровье</string>
+    <string name="body_type">Телосложение</string>
+    <string name="agility">Ловкость</string>
+    <string name="power">Сила</string>
+    <string name="intellect">Интеллект</string>
+    <string name="charisma">Харизма</string>
+    <string name="wisdom">Мудрость</string>
+    <string name="notes_character">Заметки</string>
+    <string name="url_character">Ссылка на аватар персонажа</string>
+    <string name="more_class">Больше о классе</string>
+    <string name="more_race">Больше о расе</string>
+    <string name="more_var_race">Больше о подрасе</string>
+    <string name="more_weap">Больше об оружии</string>
+    <string name="more_arm">Больше об броне</string>
+    <string name="absent_">отсутствует</string>
+    <string name="present_">присутствует</string>
+    <string name="hp_hint">hp</string>
 </resources>

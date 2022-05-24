@@ -33,123 +33,126 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/ico_character" />
 
-    <LinearLayout
-        android:id="@+id/first_linear"
+    <ScrollView
+        android:id="@+id/character_info"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:layout_marginStart="10dp"
-        android:layout_marginEnd="10dp"
-        android:layout_marginBottom="10dp"
-        android:orientation="vertical"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_height="300dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginTop="20dp"
+        android:contentDescription="@string/upd_password"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/name_character">
 
-        <ScrollView
-            android:id="@+id/character_info"
+        <LinearLayout
+            android:id="@+id/new_linear"
             android:layout_width="match_parent"
-            android:layout_height="300dp"
-            android:contentDescription="@string/upd_password">
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
 
-            <LinearLayout
-                android:id="@+id/new_linear"
+            <TextView
+                android:id="@+id/hp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical">
+                android:maxLines="30"
+                android:textColor="@color/white"
+                android:textSize="15sp" />
 
-                <TextView
-                    android:id="@+id/hp"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:maxLines="2"
-                    android:textColor="@color/white"
-                    android:textSize="15sp" />
+            <TextView
+                android:id="@+id/power"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:maxLines="30"
+                android:textColor="@color/white"
+                android:textSize="15sp" />
 
-                <TextView
-                    android:id="@+id/power"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
-                    android:maxLines="2"
-                    android:textColor="@color/white"
-                    android:textSize="15sp" />
+            <TextView
+                android:id="@+id/agility"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:maxLines="30"
+                android:textColor="@color/white"
+                android:textSize="15sp" />
 
-                <TextView
-                    android:id="@+id/agility"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
-                    android:maxLines="2"
-                    android:textColor="@color/white"
-                    android:textSize="15sp" />
+            <TextView
+                android:id="@+id/body_type"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:maxLines="30"
+                android:textColor="@color/white"
+                android:textSize="15sp" />
 
-                <TextView
-                    android:id="@+id/body_type"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
-                    android:maxLines="2"
-                    android:textColor="@color/white"
-                    android:textSize="15sp" />
+            <TextView
+                android:id="@+id/intellect"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:maxLines="30"
+                android:textColor="@color/white"
+                android:textSize="15sp" />
 
-                <TextView
-                    android:id="@+id/intellect"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
-                    android:maxLines="2"
-                    android:textColor="@color/white"
-                    android:textSize="15sp" />
+            <TextView
+                android:id="@+id/wisdom"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:maxLines="30"
+                android:textColor="@color/white"
+                android:textSize="15sp" />
 
-                <TextView
-                    android:id="@+id/wisdom"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
-                    android:maxLines="2"
-                    android:textColor="@color/white"
-                    android:textSize="15sp" />
+            <TextView
+                android:id="@+id/charisma"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:maxLines="30"
+                android:textColor="@color/white"
+                android:textSize="15sp" />
 
-                <TextView
-                    android:id="@+id/charisma"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
-                    android:maxLines="2"
-                    android:textColor="@color/white"
-                    android:textSize="15sp" />
+            <TextView
+                android:id="@+id/dmgBuff"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:maxLines="30"
+                android:textColor="@color/white"
+                android:textSize="15sp" />
 
-                <TextView
-                    android:id="@+id/dmgBuff"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
-                    android:maxLines="2"
-                    android:textColor="@color/white"
-                    android:textSize="15sp" />
+            <TextView
+                android:id="@+id/hpBuff"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:maxLines="30"
+                android:textColor="@color/white"
+                android:textSize="15sp" />
 
-                <TextView
-                    android:id="@+id/hpBuff"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
-                    android:maxLines="2"
-                    android:textColor="@color/white"
-                    android:textSize="15sp" />
+            <TextView
+                android:id="@+id/notes"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:maxLines="100"
+                android:textColor="@color/white"
+                android:textSize="15sp" />
 
-                <TextView
-                    android:id="@+id/notes"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
-                    android:maxLines="100"
-                    android:textColor="@color/white"
-                    android:textSize="15sp" />
+            <Button
+                android:id="@+id/spell_btn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="invisible"
+                android:layout_marginTop="15dp"
+                android:layout_marginBottom="20dp"
+                android:backgroundTint="#985921"
+                android:text="@string/spell_char"
+                android:textSize="15sp" />
 
-            </LinearLayout>
+        </LinearLayout>
 
-        </ScrollView>
-    </LinearLayout>
+    </ScrollView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -6,6 +6,7 @@ import android.util.Log
 import com.example.dd_app.dataSource.AccountData
 import com.example.dd_app.dataSource.CharacterData
 import com.example.dd_app.dataSource.GameData
+import com.example.dd_app.dataSource.SpellData
 
 
 fun isOnline(context: Context): Boolean {
@@ -40,4 +41,8 @@ interface GoToGame {
 
 interface GoToAcc {
     fun onClicked(data: AccountData)
+}
+
+interface GoToSpell {
+    fun onClicked(data: SpellData)
 }

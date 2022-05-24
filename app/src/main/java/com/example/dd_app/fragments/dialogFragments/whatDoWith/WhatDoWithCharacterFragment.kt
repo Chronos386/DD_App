@@ -1,4 +1,4 @@
-package com.example.dd_app.fragments.dialogFragments
+package com.example.dd_app.fragments.dialogFragments.whatDoWith
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -7,6 +7,8 @@ import androidx.fragment.app.DialogFragment
 import com.example.dd_app.dataSource.AccountData
 import com.example.dd_app.dataSource.CharacterData
 import com.example.dd_app.databinding.DialogFragmentWhatDoCharacterBinding
+import com.example.dd_app.fragments.contact.navigator
+import com.example.dd_app.fragments.dialogFragments.sureMake.SureDelCharacterFragment
 
 class WhatDoWithCharacterFragment: DialogFragment() {
     private lateinit var binding: DialogFragmentWhatDoCharacterBinding
@@ -30,16 +32,15 @@ class WhatDoWithCharacterFragment: DialogFragment() {
 
         binding.spellBtn.setOnClickListener {
             this.onDestroyView()
-
-            println("spell") //Окно заклинаний
+            navigator().goToSpellsFrag(character.classID)
         }
 
         binding.redactBtn.setOnClickListener {
             this.onDestroyView()
             if(acc.login == masterName)
-                println("master redact") //окно редактирования мастера
+                navigator().goToRedactCharacterFrag(character)
             else
-                println("gamer redact") //окно редактирования геймера
+                navigator().goToRedactCharacterFrag(character)
         }
 
         binding.dellBtn.setOnClickListener {

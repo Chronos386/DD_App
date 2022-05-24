@@ -6,16 +6,21 @@
         <entry key="../../../../layout/custom_preview.xml" value="0.10847628657921292" />
         <entry key="app/src/main/res/drawable/character_style.xml" value="0.172" />
         <entry key="app/src/main/res/drawable/edit_text_style.xml" value="0.172" />
+        <entry key="app/src/main/res/drawable/hint_stile.xml" value="0.134" />
         <entry key="app/src/main/res/drawable/ic_dashboard_black_24dp.xml" value="0.172" />
         <entry key="app/src/main/res/drawable/ico_text_background.xml" value="0.172" />
         <entry key="app/src/main/res/drawable/image_background.xml" value="0.172" />
         <entry key="app/src/main/res/drawable/item_text_background.xml" value="0.172" />
         <entry key="app/src/main/res/drawable/iten_text_background.xml" value="0.172" />
+        <entry key="app/src/main/res/drawable/spell_style.xml" value="0.176" />
+        <entry key="app/src/main/res/drawable/spell_text_background.xml" value="0.176" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.28072916666666664" />
         <entry key="app/src/main/res/layout/activity_main2.xml" value="0.2947916666666667" />
         <entry key="app/src/main/res/layout/characters_item.xml" value="0.30885416666666665" />
         <entry key="app/src/main/res/layout/dialog_fragment_character_item.xml" value="0.3098958333333333" />
         <entry key="app/src/main/res/layout/dialog_fragment_del_account.xml" value="0.30885416666666665" />
+        <entry key="app/src/main/res/layout/dialog_fragment_descr_spell.xml" value="0.3098958333333333" />
+        <entry key="app/src/main/res/layout/dialog_fragment_info_var_race.xml" value="0.30885416666666665" />
         <entry key="app/src/main/res/layout/dialog_fragment_join_game.xml" value="0.2708852697301794" />
         <entry key="app/src/main/res/layout/dialog_fragment_make_new_game.xml" value="0.3098958333333333" />
         <entry key="app/src/main/res/layout/dialog_fragment_upd_psw_account.xml" value="0.3098958333333333" />
@@ -26,6 +31,7 @@
         <entry key="app/src/main/res/layout/fragment_account.xml" value="0.3098958333333333" />
         <entry key="app/src/main/res/layout/fragment_character_info_page.xml" value="0.30885416666666665" />
         <entry key="app/src/main/res/layout/fragment_characters.xml" value="0.3098958333333333" />
+        <entry key="app/src/main/res/layout/fragment_create_character.xml" value="0.26465018943504054" />
         <entry key="app/src/main/res/layout/fragment_dashboard.xml" value="0.2947916666666667" />
         <entry key="app/src/main/res/layout/fragment_dice.xml" value="0.30885416666666665" />
         <entry key="app/src/main/res/layout/fragment_game.xml" value="0.3098958333333333" />
@@ -38,6 +44,7 @@
         <entry key="app/src/main/res/layout/fragment_notifications.xml" value="0.2947916666666667" />
         <entry key="app/src/main/res/layout/gamers_item.xml" value="0.30885416666666665" />
         <entry key="app/src/main/res/layout/games_item.xml" value="0.3098958333333333" />
+        <entry key="app/src/main/res/layout/spells_item.xml" value="0.30885416666666665" />
         <entry key="app/src/main/res/layout/spin_item.xml" value="0.30885416666666665" />
         <entry key="app/src/main/res/menu/bottom_nav_menu.xml" value="0.3283721923828125" />
         <entry key="app/src/main/res/menu/bottom_nav_menu_gamer.xml" value="0.30193634033203126" />

@@ -9,7 +9,7 @@ import com.example.dd_app.dataFrom.DataFromNetwork
 import com.example.dd_app.dataSource.AccountData
 import com.example.dd_app.dataSource.GameData
 import com.example.dd_app.databinding.FragmentHomeBinding
-import com.example.dd_app.fragments.dialogFragments.SureDelGameFragment
+import com.example.dd_app.fragments.dialogFragments.sureMake.SureDelGameFragment
 import javax.inject.Inject
 
 class HomeFragment : Fragment() {

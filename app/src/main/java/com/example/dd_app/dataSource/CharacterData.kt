@@ -1,11 +1,12 @@
 package com.example.dd_app.dataSource
+import android.text.Editable
 import com.beust.klaxon.Json
 import com.beust.klaxon.Klaxon
 import java.io.Serializable
 
 private val klaxon = Klaxon()
 
-data class CharacterData (
+data class CharacterData(
     @Json(name = "acc_id")
     val accID: Long,
     var agility: Long,
